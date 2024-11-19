@@ -1,0 +1,214 @@
+/* Página de bienvenida */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin-bottom: 20px;
+}
+
+.welcome-container p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.welcome-container button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff5722, #ff9800);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-container button:hover {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.5);
+}
+
+
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* Parte Informativa */
+  .info-container {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #e0e0e0;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+  }
+  
+  .info-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff9800;
+    margin-bottom: 15px;
+  }
+  
+  .info-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-top: 15px;
+  }
+  
+  .info-container p, .info-container ul, .info-container ol {
+    font-size: 14px;
+  }
+  
+  .info-container ul, .info-container ol {
+    margin-left: 20px;
+  }
+  
+  .info-container li {
+    margin-bottom: 10px;
+  }
+  
+  .info-container ul li::marker, .info-container ol li::marker {
+    color: #ff9800;
+  }
+  
+  /* Simulador */
+  .simulation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    width: 55%;
+  }
+  
+  /* Lienzo */
+  #fieldCanvas {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    background-color: #1c1c1c;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Controles */
+  .controls {
+    margin-top: 15px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    color: #e0e0e0;
+  }
+  
+  .controls h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff9800;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  input[type="range"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #ff5722;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.5);
+  }

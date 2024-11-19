@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulación Ley de Faraday</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Parte Informativa -->
+    <div class="info-container">
+      <h2>Información sobre la Ley de Faraday</h2>
+      <p>La inducción electromagnética es un fenómeno en el que un campo magnético variable induce una corriente eléctrica en un conductor. Este fenómeno es la base de muchos dispositivos como generadores y transformadores eléctricos. La Ley de Faraday describe cómo varía la corriente inducida en un circuito cuando el flujo magnético cambia.</p>
+      
+      <h3>¿Qué estamos simulando?</h3>
+      <p>En este simulador, estás interactuando con un imán en barra que se mueve a través de una bobina de alambre. A medida que el imán se mueve, el flujo magnético a través de la bobina cambia, lo que induce una corriente en ella. Los siguientes parámetros influyen en la cantidad de corriente inducida:</p>
+      <ul>
+        <li><strong>Intensidad del Campo Magnético:</strong> A mayor intensidad, mayor será el flujo magnético, lo que influye directamente en la corriente inducida.</li>
+        <li><strong>Número de Espiras en la Bobina:</strong> Cuantas más espiras tenga la bobina, mayor será la corriente inducida, de acuerdo con la Ley de Faraday.</li>
+        <li><strong>Área de la Espira:</strong> El tamaño de la espira afecta al área total del campo magnético que pasa a través de ella, impactando el flujo magnético.</li>
+      </ul>
+        
+       
+        <h3>Fórmulas utilizadas</h3>
+          <p>La Ley de Faraday describe cómo varía la corriente inducida en un circuito cuando el flujo magnético cambia.</p>
+        <ul>
+            <li>
+              <strong>Corriente inducida (I):</strong>
+              <br>
+              \[ I = -\frac{N}{R} \frac{d\Phi_B}{dt} \]
+              <br>
+              La resistencia (\(R\)) fue omitida para centrarse en el flujo magnético y la velocidad relativa del imán. La tasa de cambio del flujo magnético (\(d\Phi_B/dt\)) se simplificó asumiendo una variación lineal basada en el movimiento del imán. La formula utilizada fue:
+            </li></ul><br>
+            \[ I = \frac{(Tamaño \, del \, imán) \times (Área \, de \, la \, bobina) \times (Intensidad \, del \, campo)}{Distancia \, del \, imán \, a \, la \, bobina} \]
+
+            <ul>
+            <li>
+              <strong>Flujo Magnético (Φ):</strong>
+              <br>
+              \[ \Phi = B \cdot A \cdot \cos\theta \]
+              <br>
+               Se asumió que \(\theta = 0\) (campo perpendicular al área), simplificando la relación directa entre \(B\) y \(A\). La formula utilizada fue:
+               <br>
+               \[ \Phi = Corriente \, inducida \times 0.1 \]
+
+            </li>
+            <li>
+              <strong>Distancia:</strong>
+              <br>
+              \[ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+              <br>
+             La distancia calculada en píxeles se escaló a metros (\(1\ \text{px} = 0.01\ \text{m}\)) para reflejar un entorno físico realista.
+            </li>
+          </ul>
+      </ul>
+
+      <h3>¿Cómo funciona el simulador?</h3>
+      <p>Para usar el simulador:</p>
+      <ol>
+        <li>Interacciona con el imán en barra, moviéndolo sobre el lienzo de la bobina.</li>
+        <li>Modifica los controles para ajustar la intensidad del campo magnético, el número de espiras en la bobina, y el área de la espira.</li>
+        <li>Observa cómo la corriente inducida cambia en tiempo real, junto con el flujo magnético y la distancia entre el imán y la bobina.</li>
+      </ol>
+
+     </div>
+
+    <!-- Simulador -->
+    <div class="simulation-container">
+      <canvas id="fieldCanvas"></canvas>
+      <div class="controls">
+        <h3>Imán en Barra</h3>
+        <label for="intensity">Intensidad:</label>
+        <input type="range" id="intensity" min="0" max="100" value="75">
+        <label><input type="checkbox" id="showField" checked> Campo Magnético (B)</label>
+        <button id="flipMagnet">Voltear Imán</button>
+
+        <h3>Bobina de Captación</h3>
+        <label for="turns">Espiras:</label>
+        <input type="number" id="turns" min="1" max="10" value="4">
+        <label for="area">Área de la Espira (%):</label>
+        <input type="range" id="area" min="20" max="100" value="75">
+        <label><input type="checkbox" id="showElectrons" checked style="visibility: hidden;"> </label>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
